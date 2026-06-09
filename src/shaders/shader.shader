@@ -1,0 +1,33 @@
+#VertexShader
+#version 330 core
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 proj;
+
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+layout (location = 2) in vec2 aTexCoord;
+layout (location = 3) in vec3 aOffset;
+
+out vec3 ourColor;
+out vec2 TexCoord;
+void main()
+{
+gl_Position = ((proj * view * model) * vec4(aPos + aOffset, 1.0));
+ourColor = aColor;
+TexCoord = aTexCoord;
+}
+
+#FragShader
+#version 330 core
+out vec4 FragColor;
+in vec3 ourColor;
+in vec2 TexCoord;
+
+uniform sampler2D ourTexture;
+
+void main()
+{
+FragColor = texture(ourTexture, TexCoord);
+}

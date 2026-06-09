@@ -1,0 +1,19 @@
+# Build directories
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+/compile_commands.json
+
+# IDE files
+.vscode/
+
+# System files
+.DS_Store
+*.swp
+*~
+
+# Generated packaging files
+/CPackConfig.cmake
+/CPackSourceConfig.cmake
