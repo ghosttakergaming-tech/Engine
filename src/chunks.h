@@ -92,7 +92,7 @@ namespace Engine {
        VertexArray instanceArray{};
        std::mt19937 mt{};
 
-       std::unordered_map<uint64_t, std::pair<std::shared_ptr<VertexBuffer>, int>> chunkMap;
+       std::unordered_map<uint64_t, std::pair<std::unique_ptr<VertexBuffer>, int>> chunkMap;
        int playerChunkX = std::floor(playerPos.x / chunkSize);
        int playerChunkZ = std::floor(playerPos.z / chunkSize);
 

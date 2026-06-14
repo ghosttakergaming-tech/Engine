@@ -43,7 +43,7 @@ void Engine::Chunks::GenChunks(Shader shader)
                 if (chunkMap.find(chunkId) == chunkMap.end()) {
                     chunkCubes.clear();
                     createChunk(xt, zt);
-                    chunkMap.emplace(chunkId, std::make_pair(std::make_shared<VertexBuffer>(chunkCubes.data(), chunkCubes.size() * sizeof(glm::vec3)), chunkCubes.size()));
+                    chunkMap.emplace(chunkId, std::make_pair(std::make_unique<VertexBuffer>(chunkCubes.data(), chunkCubes.size() * sizeof(glm::vec3)), chunkCubes.size()));
                 }
             }
         }
