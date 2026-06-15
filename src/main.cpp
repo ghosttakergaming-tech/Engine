@@ -11,7 +11,7 @@ int main() {
 
     App app{};
 
-    app.run("../src/shaders/shader.shader", 1280, 720, "Engine");
+    app.run(SHADER_FILE, 1280, 720, "Engine");
 
     spdlog::info("Shutting down...");
 

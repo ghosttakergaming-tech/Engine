@@ -14,8 +14,7 @@ namespace Engine {
 
             void Bind();
             void Unbind();
-            
-            inline unsigned int GetID() const { return renderId; }
+
         private:
             unsigned int renderId;
     };

@@ -90,7 +90,7 @@ namespace Engine {
        glm::vec3 playerPos = Camera::getCameraPos();
        glm::vec3 lastPlayerPos = playerPos;
        VertexArray instanceArray{};
-       std::mt19937 mt{};
+       std::mt19937 mt{ std::random_device{}()};
 
        std::unordered_map<uint64_t, std::pair<std::unique_ptr<VertexBuffer>, int>> chunkMap;
        int playerChunkX = std::floor(playerPos.x / chunkSize);

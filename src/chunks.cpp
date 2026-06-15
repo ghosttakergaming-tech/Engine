@@ -103,7 +103,7 @@ Engine::Chunks::BlockState Engine::Chunks::getBlock(int x, int y, int z)
     {
         return BlockState::STONE;
     }
-    
+
     return BlockState::AIR;
 };
 

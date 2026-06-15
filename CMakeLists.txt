@@ -23,7 +23,6 @@ set(ENGINE_SOURCES
     src/render.cpp
     src/vertexarray.cpp
     src/window.cpp
-    src/app.cpp
     src/camera.cpp
     src/chunks.cpp
 )
@@ -43,7 +42,9 @@ target_link_libraries(EngineCore
         GLEW::GLEW
 )
 
-add_executable(Engine src/main.cpp)
+add_executable(Engine src/main.cpp src/app.cpp)
+
+target_compile_definitions(Engine PRIVATE SHADER_FILE="${CMAKE_SOURCE_DIR}/src/shaders/shader.shader")
 
 target_link_libraries(Engine
     PRIVATE
